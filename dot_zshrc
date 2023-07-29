@@ -36,10 +36,11 @@ export DOWNLOADS="$HOME/Downloads"
 export LIBRARY="$HOME/Documents/Library"
 export ANDREW="$HOME/Documents/andrew"
 
-alias zshconfig="nvim ~/.zshrc"
+alias alacrittyconfig="chezmoi edit ~/.config/alacritty/alacritty.yml"
+alias zshconfig="chezmoi edit ~/.zshrc"
 alias zshsrc="source ~/.zshrc"
-alias nvimconfig="nvim ~/.config/nvim"
-alias tmuxconfig="nvim ~/.config/tmux/tmux.conf"
+alias nvimconfig="chezmoi edit ~/.config/nvim"
+alias tmuxconfig="chezmoi edit ~/.config/tmux/tmux.conf"
 alias tmuxsrc="tmux source ~/.config/tmux/tmux.conf"
 
 # NAVIGATION ===================================================================
