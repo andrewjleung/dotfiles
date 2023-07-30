@@ -43,6 +43,9 @@ alias nvimconfig="chezmoi edit ~/.config/nvim"
 alias tmuxconfig="chezmoi edit ~/.config/tmux/tmux.conf"
 alias tmuxsrc="tmux source ~/.config/tmux/tmux.conf"
 
+alias ca="chezmoi apply"
+alias ccd="chezmoi cd"
+
 # NAVIGATION ===================================================================
 
 alias goa="z $ANDREW"
