@@ -88,24 +88,6 @@ export PATH="$PATH:/usr/local/mongodb-database-tools-macos-x86_64-100.5.1/bin"
 # eval `opam config env`
 # . /usr/local/opam/opam-init/init.sh
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/andrewleung/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/andrewleung/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/andrewleung/opt/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/andrewleung/opt/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-# Configuring config files repo
-alias config='/usr/bin/git --git-dir=/Users/andrewleung/.cfg/ --work-tree=/Users/andrewleung'
-
 export PATH="$PATH:/Applications/Racket v8.4/bin"
 
 # pnpm
