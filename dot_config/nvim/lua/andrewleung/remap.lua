@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
 
 -- move selections up and down with `J` and `K`
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")

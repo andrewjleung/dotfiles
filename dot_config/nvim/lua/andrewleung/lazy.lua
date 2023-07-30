@@ -13,10 +13,13 @@ vim.opt.rtp:prepend(lazypath)
 
 return require('lazy').setup({
   {
-    'nvim-telescope/telescope.nvim',
-    version = '0.1.1',
-    -- or                            , branch = '0.1.x',
-    dependencies = { { 'nvim-lua/plenary.nvim' } }
+    "ibhagwan/fzf-lua",
+    -- optional for icon support
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      -- calling `setup` is optional for customization
+      require("fzf-lua").setup({})
+    end
   },
   { "navarasu/onedark.nvim", name = "onedark" },
   'nvim-treesitter/nvim-treesitter',
