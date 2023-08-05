@@ -1,5 +1,3 @@
-local theme = require('onedark')
-theme.setup {
-  style = 'darker'
-}
+local theme = require('monokai-pro')
+theme.setup()
 theme.load()

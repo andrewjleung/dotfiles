@@ -21,7 +21,7 @@ return require('lazy').setup({
       require("fzf-lua").setup({})
     end
   },
-  { "navarasu/onedark.nvim", name = "onedark" },
+  "loctvl842/monokai-pro.nvim",
   'nvim-treesitter/nvim-treesitter',
   'nvim-treesitter/playground',
   'theprimeagen/harpoon',
@@ -107,5 +107,9 @@ return require('lazy').setup({
   {
     "nvim-lualine/lualine.nvim",
     dependencies = "nvim-tree/nvim-web-devicons"
-  }
+  },
+  {
+    "ggandor/leap.nvim",
+    dependencies = "tpope/vim-repeat"
+  },
 })
