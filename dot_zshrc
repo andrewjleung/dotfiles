@@ -115,3 +115,9 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # ruby
 eval "$(rbenv init - zsh)"
 
+# use the correct brew for arch
+if [ "$(arch)" = "arm64" ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+    eval "$(/usr/local/bin/brew shellenv)"
+fi
