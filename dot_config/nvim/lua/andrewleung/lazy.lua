@@ -111,4 +111,5 @@ return require('lazy').setup({
     "ggandor/leap.nvim",
     dependencies = "tpope/vim-repeat"
   },
+  "mg979/vim-visual-multi",
 })
