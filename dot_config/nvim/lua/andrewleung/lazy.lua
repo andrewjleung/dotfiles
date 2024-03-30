@@ -24,7 +24,6 @@ return require('lazy').setup({
   "loctvl842/monokai-pro.nvim",
   'nvim-treesitter/nvim-treesitter',
   'nvim-treesitter/playground',
-  'theprimeagen/harpoon',
   'mbbill/undotree',
   'tpope/vim-fugitive',
   {

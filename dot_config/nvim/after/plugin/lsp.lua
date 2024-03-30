@@ -8,7 +8,8 @@ lsp.ensure_installed({
   'pyright',
   'lua_ls',
   'rust_analyzer',
-  'tailwindcss'
+  'tailwindcss',
+  'biome',
 })
 
 local cmp = require('cmp')
