@@ -102,4 +102,11 @@ require("lazy").setup({
 			require("ts-error-translator").setup()
 		end,
 	},
+	{
+		"numToStr/Comment.nvim",
+		opts = {
+			-- add any options here
+		},
+		lazy = false,
+	},
 })
