@@ -25,12 +25,12 @@ vim.opt.signcolumn = "yes"
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "90"
 
 vim.g.mapleader = " "
 
 vim.diagnostic.config({
-  virtual_text = false,   -- Turn off inline diagnostics
+	virtual_text = false, -- Turn off inline diagnostics
 })
 
 -- Use this if you want it to automatically show all diagnostics on the
