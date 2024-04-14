@@ -26,6 +26,7 @@ require("lazy").setup({
 	{
 		"williamboman/mason.nvim",
 	},
+	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	{
 		"stevearc/conform.nvim",
 		opts = {},
