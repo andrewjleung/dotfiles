@@ -196,36 +196,34 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
-# Colors (oxocarbon)
+# Colors (monokai pro)
 colors:
+  # Default colors
   primary:
-    background: "#161616"
-    foreground: "#ffffff"
-  search:
-    matches:
-      foreground: CellBackground
-      background: '#ee5396'
-    footer_bar:
-      background: '#262626'
-      foreground: '#ffffff'
+    background: '0x2D2A2E'
+    foreground: '0xfff1f3'
+
+  # Normal colors
   normal:
-    black: "#262626"
-    magenta: "#ff7eb6"
-    green: "#42be65"
-    yellow: "#ffe97b"
-    blue: "#33b1ff"
-    red: "#ee5396"
-    cyan: "#3ddbd9"
-    white: "#dde1e6"
+    black:   '0x2c2525'
+    red:     '0xfd6883'
+    green:   '0xadda78'
+    yellow:  '0xf9cc6c'
+    blue:    '0xf38d70'
+    magenta: '0xa8a9eb'
+    cyan:    '0x85dacc'
+    white:   '0xfff1f3'
+
+  # Bright colors
   bright:
-    black: "#393939"
-    magenta: "#ff7eb6"
-    green: "#42be65"
-    yellow: "#ffe97b"
-    blue: "#33b1ff"
-    red: "#ee5396"
-    cyan: "#3ddbd9"
-    white: "#ffffff"
+    black:   '0x72696a'
+    red:     '0xfd6883'
+    green:   '0xadda78'
+    yellow:  '0xf9cc6c'
+    blue:    '0xf38d70'
+    magenta: '0xa8a9eb'
+    cyan:    '0x85dacc'
+    white:   '0xfff1f3'
 
 # Bell
 #

@@ -22,7 +22,12 @@ require("lazy").setup({
 		end,
 	},
 	{ "alexghergh/nvim-tmux-navigation" },
-	{ "nyoom-engineering/oxocarbon.nvim" },
+	{
+		"loctvl842/monokai-pro.nvim",
+		config = function()
+			require("monokai-pro").setup()
+		end,
+	},
 	{
 		"williamboman/mason.nvim",
 	},
@@ -120,7 +125,9 @@ require("lazy").setup({
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
-			require("lualine").setup()
+			require("lualine").setup({
+				theme = "monokai-pro",
+			})
 		end,
 	},
 	{
