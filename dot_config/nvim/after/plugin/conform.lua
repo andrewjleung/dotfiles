@@ -10,6 +10,8 @@ conform.setup({
 		typescript = { { "biome-check", "biome", "prettier" } },
 		typescriptreact = { { "biome-check", "biome", "prettierd", "prettier" } },
 		markdown = { "markdownlint" },
+		rust = { "rustfmt" },
+		go = { "goimports", "gofmt" },
 	},
 	format_on_save = {
 		-- These options will be passed to conform.format()

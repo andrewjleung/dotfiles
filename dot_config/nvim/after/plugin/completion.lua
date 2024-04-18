@@ -68,6 +68,7 @@ local lsps = {
 	"tailwindcss",
 	"biome",
 	"eslint",
+	"rust_analyzer",
 }
 
 for _, lsp in ipairs(lsps) do
