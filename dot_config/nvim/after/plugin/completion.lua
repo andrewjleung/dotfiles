@@ -13,8 +13,10 @@ cmp.setup({
 		-- documentation = cmp.config.window.bordered(),
 	},
 	mapping = cmp.mapping.preset.insert({
-		["<C-h>"] = cmp.mapping.scroll_docs(-4),
-		["<C-l>"] = cmp.mapping.scroll_docs(4),
+		["<C-p>"] = cmp.mapping.select_prev_item(),
+		["<C-n>"] = cmp.mapping.select_next_item(),
+		["<C-d>"] = cmp.mapping.scroll_docs(4),
+		["<C-u>"] = cmp.mapping.scroll_docs(-4),
 		["<C-y>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.abort(),
 		["<CR>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
@@ -23,6 +25,7 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" }, -- For luasnip users.
 		{ name = "nvim_lsp_signature_help" },
+		{ name = "gopls" },
 	}, {
 		{ name = "buffer" },
 	}),
@@ -60,15 +63,17 @@ cmp.setup.cmdline(":", {
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local lspconfig = require("lspconfig")
+local util = require("lspconfig.util")
 local lsps = {
 	"biome",
-	"gopls",
 	"pyright",
 	"lua_ls",
 	"tailwindcss",
 	"biome",
 	"eslint",
 	"rust_analyzer",
+	"gopls",
+	"tsserver",
 }
 
 for _, lsp in ipairs(lsps) do

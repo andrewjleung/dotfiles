@@ -5,6 +5,7 @@ configs.setup({
 		"lua",
 		"javascript",
 		"typescript",
+		"tsx",
 		"bash",
 		"dockerfile",
 		"git_rebase",
@@ -23,4 +24,7 @@ configs.setup({
 		"yaml",
 		"xml",
 	},
+	highlight = { enable = true },
 })
+
+vim.highlight.priorities.semantic_tokens = 95 -- Or any number lower than 100, treesitter's priority level
