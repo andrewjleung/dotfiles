@@ -26,6 +26,7 @@ cmp.setup({
 		{ name = "luasnip" }, -- For luasnip users.
 		{ name = "nvim_lsp_signature_help" },
 		{ name = "gopls" },
+		{ name = "vtsls" },
 	}, {
 		{ name = "buffer" },
 	}),
@@ -73,7 +74,7 @@ local lsps = {
 	"eslint",
 	"rust_analyzer",
 	"gopls",
-	"tsserver",
+	"vtsls",
 }
 
 for _, lsp in ipairs(lsps) do
