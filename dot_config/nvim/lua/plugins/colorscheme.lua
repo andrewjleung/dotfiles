@@ -6,6 +6,14 @@ return {
       require("monokai-pro").setup()
     end,
   },
+  {
+    "vague2k/vague.nvim",
+    config = function()
+      require("vague").setup({
+        -- optional configuration here
+      })
+    end,
+  },
 
   -- configure LazyVim to use monokai pro
   {
