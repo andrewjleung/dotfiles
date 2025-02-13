@@ -43,7 +43,4 @@
 # resize-overlay-duration = 4s 200ms
 
 window-decoration = none
-background-opacity = 0.9
 theme = Monokai Pro
-
-# hi!
