@@ -121,3 +121,5 @@ if [ "$(arch)" = "arm64" ]; then
 else
     eval "$(/usr/local/bin/brew shellenv)"
 fi
+
+export PATH="/opt/homebrew/opt/curl/bin:$PATH"
