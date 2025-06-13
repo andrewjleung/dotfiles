@@ -42,5 +42,11 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
-window-decoration = none
+macos-titlebar-style = hidden
 theme = Monokai Pro
+
+window-padding-x = 10
+window-padding-y = 10
+
+background-opacity = 0.95
+background-blur = true
