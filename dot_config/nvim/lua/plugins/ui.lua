@@ -16,4 +16,15 @@ return {
       },
     },
   },
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = {
+      options = {},
+      sections = {
+        lualine_b = { "branch" },
+        lualine_x = { "fileformat", "filetype" },
+        lualine_y = {},
+      },
+    },
+  },
 }
