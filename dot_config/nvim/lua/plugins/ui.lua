@@ -79,4 +79,10 @@ return {
       { "<leader>z", "za", "Toggle fold under cursor (alias 'za')" },
     },
   },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      inlay_hints = { enabled = false },
+    },
+  },
 }
