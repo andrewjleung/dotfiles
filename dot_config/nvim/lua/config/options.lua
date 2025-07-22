@@ -9,3 +9,9 @@ vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 
 vim.diagnostic.config({ virtual_text = false })
+
+vim.filetype.add({
+  extension = {
+    typ = "typst",
+  },
+})
