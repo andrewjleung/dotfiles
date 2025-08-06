@@ -5,6 +5,7 @@ plugins=(
     git
     zsh-autosuggestions
     zsh-syntax-highlighting
+    aliases
     alias-finder
     chezmoi
     fzf
