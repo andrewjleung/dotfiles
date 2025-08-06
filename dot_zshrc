@@ -5,8 +5,17 @@ plugins=(
     git
     zsh-autosuggestions
     zsh-syntax-highlighting
+    alias-finder
+    chezmoi
+    fzf
+    rust
+    git-commit
+    golang
+    mise
+    tmux
 )
 
+zstyle ':omz:update' mode auto
 source $ZSH/oh-my-zsh.sh
 
 # USER CONFIGURATION ===========================================================
@@ -29,10 +38,6 @@ alias tmuxsrc="tmux source ~/.config/tmux/tmux.conf"
 
 alias ca="chezmoi apply"
 alias ccd="chezmoi cd"
-
-# GIT ==========================================================================
-
-alias gst="git status"
 
 # CUSTOM COMMANDS ==============================================================
 
