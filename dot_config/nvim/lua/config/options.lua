@@ -13,3 +13,10 @@ vim.filetype.add({
     typ = "typst",
   },
 })
+
+vim.lsp.enable("shopify_theme_ls")
+vim.lsp.config("shopify_theme_ls", {
+  root_markers = {
+    ".trmnlp.yml",
+  },
+})

@@ -7,6 +7,7 @@ return {
         sh = { "shfmt", "beautysh" },
         typst = { "typstyle" },
         go = { "gofumpt", "goimports" },
+        liquid = { "prettier" },
       },
     },
   },
