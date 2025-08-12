@@ -10,7 +10,7 @@ return {
         "lua-language-server",
         "marksman",
         "ruff",
-        "rust-analyzer",
+        -- "rust-analyzer",
         "shopify-cli",
         "tailwindcss-language-server",
         "taplo",
