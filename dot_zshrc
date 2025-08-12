@@ -3,6 +3,7 @@ export ZSH="/Users/andrewleung/.oh-my-zsh"
 
 plugins=(
     git
+    gh
     zsh-autosuggestions
     zsh-syntax-highlighting
     aliases

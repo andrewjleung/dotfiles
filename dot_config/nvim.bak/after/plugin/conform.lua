@@ -6,9 +6,9 @@ conform.setup({
 		-- Conform will run multiple formatters sequentially
 		python = { "isort", "black" },
 		-- Use a sub-list to run only the first available formatter
-		javascript = { { "biome-check", "biome", "prettier" } },
-		typescript = { { "biome-check", "biome", "prettier" } },
-		typescriptreact = { { "biome-check", "biome", "prettierd", "prettier" } },
+		javascript = { "biome-check", "biome", "prettier" },
+		typescript = { "biome-check", "biome", "prettier" },
+		typescriptreact = { "biome-check", "biome", "prettierd", "prettier" },
 		markdown = { "markdownlint" },
 		rust = { "rustfmt" },
 		go = { "goimports", "gofmt" },
