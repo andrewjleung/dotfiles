@@ -6,20 +6,21 @@ _setup_shell() {
 
   # shellcheck disable=SC2034
   plugins=(
-    git
-    gh
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-    aliases
     alias-finder
+    aliases
+    command-not-found
     chezmoi
     fzf
-    rust
+    gh
+    git
     git-commit
     golang
-    mise
-    tmux
     httpie
+    mise
+    rust
+    tmux
+    zsh-autosuggestions
+    zsh-syntax-highlighting
   )
 
   zstyle ':omz:plugins:alias-finder' autoload yes
