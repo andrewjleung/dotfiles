@@ -1,5 +1,7 @@
+# prelude
+
 _setup_shell() {
-  export ZSH="/Users/andrewleung/.oh-my-zsh"
+  export ZSH="$HOME/.oh-my-zsh"
 
   # shellcheck disable=SC2034
   plugins=(
@@ -22,12 +24,29 @@ _setup_shell() {
   zstyle ':omz:plugins:alias-finder' autoload yes
   zstyle ':omz:plugins:alias-finder' cheaper yes
   zstyle ':omz:update' mode auto
-  source $ZSH/oh-my-zsh.sh
+
+  # shellcheck disable=SC1091
+  source "$ZSH/oh-my-zsh.sh"
 
   eval "$(starship init zsh)"
   eval "$(zoxide init zsh)"
   eval "$("$HOME"/.local/bin/mise activate zsh)"
 }
+
+inspect_path() {
+  # shellcheck disable=SC2001
+  echo "$PATH" | sed 's/:/\n/g'
+}
+
+miseg() {
+  mise "$@" -p "$HOME/.config/mise/mise.toml"
+}
+
+misel() {
+  mise "$@" -p "$HOME/.config/mise/mise.local.toml"
+}
+
+# start
 
 _setup_shell
 
