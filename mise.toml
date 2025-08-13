@@ -2,7 +2,8 @@
 # ONLY USE THIS FOR MACHINE-AGNOSTIC CONFIG.
 
 [env]
-EDITOR = "{{ exec(command='which nvim') }}"
+EDITOR = { value = "{{ exec(command='which nvim') }}", tools = true }
+ZSH = "{{ env.HOME }}/.oh-my-zsh"
 
 [settings]
 ignored_config_paths = ["{{ exec(command='chezmoi source-path') }}"]
