@@ -1,0 +1,19 @@
+#:schema https://github.com/jdx/mise/blob/main/schema/mise.json
+# ONLY USE THIS FOR MACHINE-AGNOSTIC CONFIG.
+
+[env]
+EDITOR = "{{ exec(command='which nvim') }}"
+
+[settings]
+ignored_config_paths = ["{{ exec(command='chezmoi source-path') }}"]
+
+[tools]
+chezmoi = "latest"
+fd = "latest"
+fzf = "latest"
+neovim = "latest"
+ripgrep = "latest"
+starship = "latest"
+tmux = "latest"
+usage = "latest"
+zoxide = "latest"

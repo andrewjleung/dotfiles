@@ -1,7 +1,8 @@
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/andrewleung/.oh-my-zsh"
+_setup_shell() {
+  export ZSH="/Users/andrewleung/.oh-my-zsh"
 
-plugins=(
+  # shellcheck disable=SC2034
+  plugins=(
     git
     gh
     zsh-autosuggestions
@@ -16,102 +17,24 @@ plugins=(
     mise
     tmux
     httpie
-)
+  )
 
-zstyle ':omz:plugins:alias-finder' autoload yes
-zstyle ':omz:plugins:alias-finder' cheaper yes
-zstyle ':omz:update' mode auto
-source $ZSH/oh-my-zsh.sh
+  zstyle ':omz:plugins:alias-finder' autoload yes
+  zstyle ':omz:plugins:alias-finder' cheaper yes
+  zstyle ':omz:update' mode auto
+  source $ZSH/oh-my-zsh.sh
 
-# USER CONFIGURATION ===========================================================
+  eval "$(starship init zsh)"
+  eval "$(zoxide init zsh)"
+  eval "$("$HOME"/.local/bin/mise activate zsh)"
+}
 
-eval "$(zoxide init zsh)"
-export EDITOR="/opt/homebrew/bin/nvim"
+_setup_shell
 
-# DIRECTORIES ==================================================================
-
-export DOWNLOADS="$HOME/Downloads"
-export LIBRARY="$HOME/Documents/Library"
-export ANDREW="$HOME/Documents/andrew"
-
-alias alacrittyconfig="chezmoi edit ~/.config/alacritty/alacritty.yml"
-alias zshconfig="chezmoi edit ~/.zshrc"
-alias zshsrc="source ~/.zshrc"
-alias nvimconfig="chezmoi edit ~/.config/nvim"
-alias tmuxconfig="chezmoi edit ~/.config/tmux/tmux.conf"
-alias tmuxsrc="tmux source ~/.config/tmux/tmux.conf"
+export PATH="/opt/homebrew/opt/curl/bin:$PATH"
+export PATH="$DEV/scripts:$PATH"
+export PATH="/usr/local/texlive/2022/bin/universal-darwin/:$PATH"
 
 alias ca="chezmoi apply"
 alias ccd="chezmoi cd"
-
-# CUSTOM COMMANDS ==============================================================
-
-# Navigate into the last subdirectory in the given path.
-golastin () {
-    z "$1" && z $(pwd)/$(ls -t -d -- *(/) | head -1)
-}
-
-# Move the latest file in the "Downloads" folder to the folder specified at the given path.
-mvdl () {
-    if [ "$(ls -A $DOWNLOADS)" ]; then
-        local LATEST=$(z $DOWNLOADS && ls -t | head -1)    
-        mv $DOWNLOADS/$LATEST $1
-    else
-        echo "No downloads to move."
-    fi
-}
-
 alias n="nvim ."
-
-# ==============================================================================
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export PATH="$PATH:/usr/local/mongodb-database-tools-macos-x86_64-100.5.1/bin"
-
-# opam configuration
-[[ ! -r /Users/andrewleung/.opam/opam-init/init.zsh ]] || source /Users/andrewleung/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
-
-# eval `opam config env`
-# . /usr/local/opam/opam-init/init.sh
-
-export PATH="$PATH:/Applications/Racket v8.4/bin"
-
-# pnpm
-export PNPM_HOME="/Users/andrewleung/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
-
-export PATH="/usr/local/texlive/2022/bin/universal-darwin/:$PATH"
-
-export GOPATH="$HOME/go/"
-export GOROOT="/usr/local/go"
-export PATH="$GOROOT/bin:$PATH"
-export PATH="$PATH:$GOPATH/bin"
-
-# bun completions
-[ -s "/Users/andrewleung/.bun/_bun" ] && source "/Users/andrewleung/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# ruby
-eval "$(rbenv init - zsh)"
-
-# use the correct brew for arch
-if [ "$(arch)" = "arm64" ]; then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-else
-    eval "$(/usr/local/bin/brew shellenv)"
-fi
-
-# mise
-eval "$(~/.local/bin/mise activate zsh)"
-
-export PATH="/opt/homebrew/opt/curl/bin:$PATH"
-
-# starship prompt
-eval "$(starship init zsh)"

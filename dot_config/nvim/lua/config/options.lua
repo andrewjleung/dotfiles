@@ -20,3 +20,8 @@ vim.lsp.config("shopify_theme_ls", {
     ".trmnlp.yml",
   },
 })
+
+vim.lsp.enable("bashls")
+vim.lsp.config("bashls", {
+  filetypes = { "zsh" },
+})
