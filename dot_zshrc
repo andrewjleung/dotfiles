@@ -51,7 +51,7 @@ misel() {
 _setup_shell
 
 export PATH="/opt/homebrew/opt/curl/bin:$PATH"
-export PATH="$DEV/scripts:$PATH"
+export PATH="$DEV/scripts/bin:$PATH"
 export PATH="/usr/local/texlive/2022/bin/universal-darwin/:$PATH"
 
 alias ca="chezmoi apply"
