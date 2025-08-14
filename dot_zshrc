@@ -3,6 +3,7 @@
 _setup_shell() {
   # mise must come first to ensure tools and env are set
   eval "$("$HOME"/.local/bin/mise activate zsh)"
+  export ZSH="$HOME/.oh-my-zsh"
 
   # shellcheck disable=SC2034
   plugins=(
