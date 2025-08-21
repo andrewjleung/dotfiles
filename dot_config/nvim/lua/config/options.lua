@@ -13,6 +13,7 @@ vim.opt.clipboard = ""
 vim.filetype.add({
   extension = {
     typ = "typst",
+    keymap = "dts",
   },
 })
 

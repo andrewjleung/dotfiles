@@ -9,8 +9,6 @@ ignored_config_paths = ["{{ exec(command='chezmoi source-path') }}"]
 
 [tools]
 chezmoi = "latest"
-clang = 'latest'
-cmake = 'latest'
 fd = "latest"
 fzf = "latest"
 neovim = "latest"
