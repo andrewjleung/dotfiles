@@ -4,3 +4,5 @@
 	emal = andrewleung104@gmail.com
 [init]
 	defaultBranch = main
+[push]
+	autoSetupRemote = true
