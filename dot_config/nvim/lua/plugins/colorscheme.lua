@@ -10,6 +10,9 @@ return {
             SnacksIndent = { fg = c.editorLineNumber.foreground },
           }
         end,
+        plugins = {
+          lualine = {},
+        },
       })
     end,
   },
@@ -29,4 +32,6 @@ return {
       colorscheme = "monokai-pro",
     },
   },
+
+  { "typicode/bg.nvim", lazy = false },
 }

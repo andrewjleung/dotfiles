@@ -21,9 +21,28 @@ return {
     opts = {
       options = {},
       sections = {
-        lualine_b = { "branch" },
-        lualine_x = { "fileformat", "filetype" },
-        lualine_y = {},
+        lualine_a = { "mode" },
+        lualine_b = { "branch", "diff", "diagnostics" },
+        lualine_c = { "filename" },
+        lualine_x = {
+          {
+            "macro",
+            fmt = function()
+              local reg = vim.fn.reg_recording()
+              if reg ~= "" then
+                return "Recording @" .. reg
+              end
+              return nil
+            end,
+            color = { fg = "#fc9867" },
+            draw_empty = false,
+          },
+          "encoding",
+          "fileformat",
+          "filetype",
+        },
+        lualine_y = { "progress" },
+        lualine_z = { "location" },
       },
     },
   },
