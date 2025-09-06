@@ -5,6 +5,7 @@ return {
       ensure_installed = {
         "bash-language-server",
         "biome",
+        "buf",
         "gopls",
         "json-lsp",
         "lua-language-server",

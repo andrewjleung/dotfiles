@@ -8,6 +8,7 @@ return {
         typst = { "typstyle" },
         go = { "gofumpt", "goimports" },
         liquid = { "prettier" },
+        proto = { "buf_ls" },
       },
     },
   },

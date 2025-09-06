@@ -1,0 +1,19 @@
+[[session]]
+name = "linkr"
+path = "~/Documents/andrew/dev/linkr"
+startup_command = 'tmex -W linkr nvim -w server "pnpm dev"'
+
+[[session]]
+name = "resume-content"
+path = "~/Documents/andrew/professional/resumes"
+startup_command = 'open -na Ghostty --args --working-directory={} -e tdf artifacts/resume.pdf; tmex --layout=2{31} "nvim {}/resume.json" reze'
+
+[[session]]
+name = "trmnl/hevy"
+path = "~/Documents/andrew/dev/trmnl/plugins/hevy"
+startup_command = 'tmex -W trmnl/hevy "nvim ." -w server "mise run server" ; open -g "http://localhost:4567"'
+
+[[session]]
+name = "trmnl/climbing-gyms"
+path = "~/Documents/andrew/dev/trmnl/plugins/climbing-gym"
+startup_command = 'tmex -W trmnl/climbing-gyms "nvim ." -w server "mise run server" ; open -g "http://localhost:4567"'

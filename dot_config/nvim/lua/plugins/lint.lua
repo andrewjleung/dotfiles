@@ -5,6 +5,7 @@ return {
       linters_by_ft = {
         markdown = { "markdownlint-cli2" },
         sql = { "sqlfluff" },
+        proto = { "buf_ls" },
       },
     },
   },
