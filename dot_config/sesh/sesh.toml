@@ -1,4 +1,8 @@
 [[session]]
+name = "dotfiles"
+startup_command = 'tmex -W dotfiles "nvim $(chezmoi source-path)"'
+
+[[session]]
 name = "linkr"
 path = "~/Documents/andrew/dev/linkr"
 startup_command = 'tmex -W linkr nvim -w server "pnpm dev"'
