@@ -1,6 +1,6 @@
 [[session]]
 name = "dotfiles"
-startup_command = 'tmex -W dotfiles "nvim $(chezmoi source-path)"'
+startup_command = 'tmex -W dotfiles "z $(chezmoi source-path) && nvim ."'
 
 [[session]]
 name = "linkr"
