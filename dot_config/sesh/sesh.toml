@@ -10,7 +10,7 @@ startup_command = 'tmex -W linkr nvim -w server "pnpm dev"'
 [[session]]
 name = "resume-content"
 path = "~/Documents/andrew/professional/resumes"
-startup_command = 'open -na Ghostty --args --working-directory={} -e tdf artifacts/resume.pdf; tmex --layout=2{31} "nvim {}/resume.json" reze'
+startup_command = 'echo -e "tdf artifacts/resume.pdf\n" | wezterm cli send-text --no-paste --pane-id $(wezterm cli spawn --new-window --cwd ~/Documents/andrew/professional/resumes -- zsh -l); tmex --layout=2{31} "nvim {}/resume.json" reze'
 
 [[session]]
 name = "trmnl/hevy"
