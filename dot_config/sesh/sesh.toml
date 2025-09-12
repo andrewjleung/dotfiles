@@ -5,7 +5,12 @@ startup_command = 'tmex -W dotfiles "z $(chezmoi source-path) && nvim ."'
 [[session]]
 name = "linkr"
 path = "~/Documents/andrew/dev/linkr"
-startup_command = 'tmex -W linkr nvim -w server "pnpm dev"'
+startup_command = 'tmex -W linkr "nvim ." -w server "pnpm dev"'
+
+[[session]]
+name = "ply"
+path = "~/Documents/andrew/dev/ply"
+startup_command = 'tmex -W ply "nvim ." -w data "mise run data"'
 
 [[session]]
 name = "resume-content"
