@@ -69,4 +69,19 @@ return {
       },
     },
   },
+  {
+    "Wansmer/treesj",
+    keys = {
+      { "<leader>tt", "<cmd>TSJToggle<cr>", desc = "Toggle split/join for node under cursor" },
+      { "<leader>ts", "<cmd>TSJSplit<cr>", desc = "Split node under cursor" },
+      { "<leader>tj", "<cmd>TSJJoin<cr>", desc = "Join node under cursor" },
+    },
+    dependencies = { "nvim-treesitter/nvim-treesitter" }, -- if you install parsers with `nvim-treesitter`
+    config = function()
+      require("treesj").setup({--[[ your config ]]
+        max_join_length = 300,
+        use_default_keymaps = false,
+      })
+    end,
+  },
 }

@@ -93,6 +93,10 @@ seshk() {
   tmux kill-session -t "$session"
 }
 
+pt() {
+  ply to "$1" --cycle "$(ply cycles | gum filter --limit 1 --no-sort --fuzzy --placeholder 'Pick an application cycle' --height 50)"
+}
+
 # start
 
 _setup_shell
