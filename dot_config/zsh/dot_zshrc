@@ -46,57 +46,6 @@ _setup_bat() {
   fi
 }
 
-inspect_path() {
-  # shellcheck disable=SC2001
-  echo "$PATH" | sed 's/:/\n/g'
-}
-
-miseg() {
-  mise "$@" -p "$HOME/.config/mise/mise.toml"
-}
-
-misel() {
-  mise "$@" -p "$HOME/.config/mise/mise.local.toml"
-}
-
-miser() {
-  misel use "$(mise registry | sed 's/[[:space:]].*//' | gum filter --limit 1 --no-sort --fuzzy --placeholder 'Available tools' --no-strip-ansi)"
-}
-
-saul() {
-  local j="$(jobs)"
-
-  if [[ -n "$j" ]]; then
-    print "background jobs detected:\n\n$j\n\nplease exit them before saul-ing"
-    return 1
-  fi
-
-  chezmoi apply
-  tmux source ~/.config/tmux/tmux.conf
-  omz reload
-}
-
-seshls() {
-  sesh connect "$(
-    sesh list -i | gum filter --limit 1 --no-sort --fuzzy --placeholder 'Pick a sesh' --height 50 --prompt='⚡' --no-strip-ansi
-  )"
-}
-
-seshk() {
-  local session="$(sesh list -t | gum filter --limit 1 --no-sort --fuzzy --placeholder 'Pick a sesh to kill' --height 50 --prompt='⚔️' --no-strip-ansi)"
-
-  if [[ -z "$session" ]]; then
-    echo "none selected"
-    return 1
-  fi
-
-  tmux kill-session -t "$session"
-}
-
-pt() {
-  ply to "$1" --cycle "$(ply cycles | gum filter --limit 1 --no-sort --fuzzy --placeholder 'Pick an application cycle' --height 50)"
-}
-
 # start
 
 _setup_shell
@@ -108,5 +57,9 @@ export PATH="$PATH:/usr/local/texlive/2022/bin/universal-darwin/"
 
 alias ca="chezmoi apply"
 alias ccd="chezmoi cd"
-alias n="nvim ."
+alias n="nvim"
 alias foot="tmux split-window -v -l 20 -f"
+
+for config_file in $ZDOTDIR/*.zsh; do
+  source "$config_file"
+done
