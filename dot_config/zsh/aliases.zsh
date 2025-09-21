@@ -1,0 +1,5 @@
+alias ca="chezmoi apply"
+alias ccd="chezmoi cd"
+alias foot="tmux split-window -v -l 20 -f"
+alias lg="lazygit"
+alias n="nvim"
