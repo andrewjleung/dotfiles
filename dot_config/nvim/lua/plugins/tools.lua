@@ -98,4 +98,10 @@ return {
       { "<leader>p", "<cmd>Grapple cycle_tags prev<cr>", desc = "Grapple cycle previous tag" },
     },
   },
+
+  {
+    "OXY2DEV/markview.nvim",
+    lazy = false,
+    dependencies = { "loctvl842/monokai-pro.nvim", "saghen/blink.cmp" },
+  },
 }
