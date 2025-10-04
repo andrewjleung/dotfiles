@@ -104,4 +104,14 @@ return {
     lazy = false,
     dependencies = { "loctvl842/monokai-pro.nvim", "saghen/blink.cmp" },
   },
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    enabled = false,
+  },
+  {
+    "andrewferrier/wrapping.nvim",
+    config = function()
+      require("wrapping").setup()
+    end,
+  },
 }
