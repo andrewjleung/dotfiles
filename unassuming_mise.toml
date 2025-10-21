@@ -3,6 +3,7 @@
 
 [env]
 EDITOR = { value = "{{ exec(command='which nvim') }}", tools = true }
+LG_CONFIG_FILE = "{{ get_env(name='HOME') }}/.config/lazygit/config.yml"
 
 [settings]
 ignored_config_paths = ["{{ exec(command='chezmoi source-path') }}"]
