@@ -5,6 +5,7 @@ return {
     config = function()
       require("monokai-pro").setup({
         transparent_background = true,
+        background_clear = { "float_win" },
         override = function(c)
           return {
             SnacksIndent = { fg = c.editorLineNumber.foreground },

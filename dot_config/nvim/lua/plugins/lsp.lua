@@ -2,6 +2,7 @@ return {
   {
     "mason-org/mason.nvim",
     opts = {
+      ui = { border = "rounded" },
       ensure_installed = {
         "bash-language-server",
         "biome",
