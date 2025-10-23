@@ -109,12 +109,6 @@ return {
     enabled = false,
   },
   {
-    "andrewferrier/wrapping.nvim",
-    config = function()
-      require("wrapping").setup({})
-    end,
-  },
-  {
     "hedyhli/markdown-toc.nvim",
     ft = "markdown", -- Lazy load on markdown filetype
     cmd = { "Mtoc" }, -- Or, lazy load on "Mtoc" command
