@@ -3,8 +3,10 @@ pt() {
 }
 
 pn() {
-  ply no "$(ply data-directory)/$(eza $(ply data-directory) | fzf)"
+  ply no "$(eza --absolute $(ply data-directory) | fzf)"
 }
+
+alias pyy='ply yes "$(eza --absolute $(ply data-directory) | fzf)"'
 
 pd() {
   yazi "$(ply data-directory)"
