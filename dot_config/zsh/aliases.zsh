@@ -1,5 +1,6 @@
 alias ca="chezmoi apply"
 alias ccd="chezmoi cd"
-alias foot="tmux split-window -v -l 20 -f"
+alias foot="tmux split-window -v -l 16 -f"
 alias lg="lazygit"
 alias n="nvim"
+alias res="tdf $RESUMES/artifacts/resume.pdf"

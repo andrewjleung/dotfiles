@@ -15,7 +15,7 @@ startup_command = 'tmex -W ply "nvim ." -w data "mise run data"'
 [[session]]
 name = "resume-content"
 path = "~/Documents/andrew/professional/resumes"
-startup_command = 'echo -e "tdf artifacts/resume.pdf\n" | wezterm cli send-text --no-paste --pane-id $(wezterm cli spawn --new-window --cwd ~/Documents/andrew/professional/resumes -- zsh -l); tmex --layout=2{31} "nvim {}/resume.json" reze'
+startup_command = 'tmex -W content --layout=2{51} "nvim {}/resume.json" reze -w config "nvim $HOME/.config/reze/reze.toml"'
 
 [[session]]
 name = "trmnl/hevy"

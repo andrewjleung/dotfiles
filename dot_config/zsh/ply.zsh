@@ -3,10 +3,10 @@ pt() {
 }
 
 pn() {
-  ply no "$(eza --absolute $(ply data-directory) | fzf)"
+  ply no "$(ply list applications --active | fzf)"
 }
 
-alias pyy='ply yes "$(eza --absolute $(ply data-directory) | fzf)"'
+alias pyy='ply yes "$(ply list applications --active | fzf)"'
 
 pd() {
   yazi "$(ply data-directory)"
