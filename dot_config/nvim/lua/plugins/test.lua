@@ -1,12 +1,13 @@
 return {
   {
-    "nvim-neotest/neotest",
-    opts = {
-      floating = {
-        border = "rounded",
-      },
-      adapters = {
-        require("neotest-python"),
+    "mfussenegger/nvim-dap",
+    keys = {
+      {
+        "<leader>dN",
+        function()
+          require("dap").clear_breakpoints()
+        end,
+        desc = "Clear all breakpoints",
       },
     },
   },
