@@ -26,3 +26,7 @@ saulr() {
   tmux source ~/.config/tmux/tmux.conf
   omz reload
 }
+
+init() {
+  "$DEV/$1/init.sh" $2
+}
