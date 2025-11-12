@@ -55,10 +55,16 @@ return {
       "loctvl842/monokai-pro.nvim",
       "saghen/blink.cmp",
     },
-  },
-  {
-    "MeanderingProgrammer/render-markdown.nvim",
-    enabled = false,
+    config = function()
+      vim.g.markview_dark_bg = vim.api.nvim_get_hl_by_name("Normal", true)
+    end,
+    opts = {
+      markdown_inline = {
+        inline_codes = {
+          hl = vim.api.nvim_get_hl_by_name("Normal", true),
+        },
+      },
+    },
   },
   {
     "hedyhli/markdown-toc.nvim",
@@ -71,7 +77,6 @@ return {
       require("mtoc").setup({})
     end,
   },
-
   {
     "kdheepak/lazygit.nvim",
     lazy = true,
@@ -91,5 +96,12 @@ return {
     keys = {
       { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
     },
+  },
+
+  {
+    "andrewferrier/wrapping.nvim",
+    config = function()
+      require("wrapping").setup()
+    end,
   },
 }

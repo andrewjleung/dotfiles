@@ -129,4 +129,13 @@ return {
       },
     },
   },
+
+  {
+    "Bekaboo/deadcolumn.nvim",
+    config = function()
+      require("deadcolumn").setup({
+        scope = "buffer",
+      })
+    end,
+  },
 }
