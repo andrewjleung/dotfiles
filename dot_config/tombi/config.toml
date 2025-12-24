@@ -1,0 +1,24 @@
+[format]
+[format.rules]
+indent-style = "space"
+indent-width = 4
+
+[schema]
+catalog = {
+  paths = [
+    "tombi://www.schemastore.org/api/json/catalog.json",
+    "https://www.schemastore.org/api/json/catalog.json",
+  ],
+}
+
+[[schemas]]
+path = "https://github.com/rust-lang/cargo/blob/master/crates/cargo-util-schemas/manifest.schema.json"
+include = ["cargo.toml"]
+
+[[schemas]]
+path = "https://github.com/rust-lang/cargo/blob/master/crates/cargo-util-schemas/manifest.schema.json"
+include = ["cargo.toml"]
+
+[[schemas]]
+path = "https://mise.jdx.dev/schema/mise.json"
+include = ["mise.toml"]

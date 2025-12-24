@@ -14,7 +14,7 @@ return {
       "gitcommit",
       "gitignore",
       "go",
-      "html",
+      "gotmpl",
       "html",
       "javascript",
       "jsdoc",

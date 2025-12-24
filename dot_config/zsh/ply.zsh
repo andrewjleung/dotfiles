@@ -3,7 +3,7 @@ pt() {
 }
 
 pn() {
-  ply no "$(ply list applications --active | fzf)"
+  ply no "$(ply list applications --active | fzf --tmux --exit-0 --query $1)"
 }
 
 alias pyy='ply yes "$(ply list applications --active | fzf)"'

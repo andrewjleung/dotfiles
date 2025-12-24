@@ -6,6 +6,7 @@ return {
         markdown = { "markdownlint-cli2" },
         sql = { "sqlfluff" },
         proto = { "buf_ls" },
+        toml = { "tombi" },
       },
     },
   },

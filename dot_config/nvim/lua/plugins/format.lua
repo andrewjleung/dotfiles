@@ -9,6 +9,7 @@ return {
         go = { "gofumpt", "goimports" },
         liquid = { "prettier" },
         proto = { "buf_ls" },
+        toml = { "tombi" },
       },
     },
   },

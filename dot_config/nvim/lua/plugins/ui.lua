@@ -124,6 +124,15 @@ return {
   {
     "folke/noice.nvim",
     opts = {
+      routes = {
+        {
+          filter = {
+            event = "msg_show",
+            kind = "search_count",
+          },
+          opts = { skip = true },
+        },
+      },
       presets = {
         lsp_doc_border = true,
       },
@@ -142,5 +151,18 @@ return {
         scope = "buffer",
       })
     end,
+  },
+
+  {
+    "folke/zen-mode.nvim",
+    dependencies = {
+      "loctvl842/monokai-pro.nvim",
+      "folke/twilight.nvim",
+    },
+    opts = {
+      twilight = {
+        enabled = false,
+      },
+    },
   },
 }
