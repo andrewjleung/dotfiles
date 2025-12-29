@@ -64,6 +64,9 @@ return {
           hl = vim.api.nvim_get_hl_by_name("Normal", true),
         },
       },
+      typst = {
+        enable = false,
+      },
     },
   },
   {
