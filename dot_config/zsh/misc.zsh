@@ -11,7 +11,7 @@ inspect_path() {
 saul() {
     chezmoi apply
     tmux source ~/.config/tmux/tmux.conf
-    source ~/.zshrc
+    source ~/.config/zsh/.zshrc
 }
 
 saulr() {
