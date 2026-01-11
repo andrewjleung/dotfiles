@@ -22,8 +22,7 @@ saulr() {
         return 1
     fi
 
-    chezmoi apply
-    tmux source ~/.config/tmux/tmux.conf
+    saul
 }
 
 init() {

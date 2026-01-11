@@ -8,9 +8,9 @@ alias res="tdf $RESUMES/artifacts/resume.pdf"
 
 # git
 alias g="git"
-alias gst="git status"
+alias gP="git push"
 alias ga="git add"
 alias gcm="git commit -m"
-alias gp="git pull"
-alias gP="git push"
 alias gf="git fetch origin"
+alias gp="git pull"
+alias gst="git status"

@@ -52,7 +52,7 @@ return {
     "OXY2DEV/markview.nvim",
     lazy = false,
     dependencies = {
-      "loctvl842/monokai-pro.nvim",
+      "oskarnurm/koda.nvim",
       "saghen/blink.cmp",
     },
     config = function()
@@ -105,6 +105,14 @@ return {
     "andrewferrier/wrapping.nvim",
     config = function()
       require("wrapping").setup()
+    end,
+  },
+  {
+    "isak102/ghostty.nvim",
+    config = function()
+      require("ghostty").setup({
+        file_pattern = { "*/ghostty/config", "*/ghostty/themes/*" },
+      })
     end,
   },
 }

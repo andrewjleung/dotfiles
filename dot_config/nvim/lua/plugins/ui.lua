@@ -20,36 +20,6 @@ return {
     },
   },
   {
-    "nvim-lualine/lualine.nvim",
-    opts = {
-      options = {},
-      sections = {
-        lualine_a = { "mode" },
-        lualine_b = { "branch", "diff", "diagnostics" },
-        lualine_c = { "filename" },
-        lualine_x = {
-          {
-            "macro",
-            fmt = function()
-              local reg = vim.fn.reg_recording()
-              if reg ~= "" then
-                return "Recording @" .. reg
-              end
-              return nil
-            end,
-            color = { fg = "#fc9867" },
-            draw_empty = false,
-          },
-          "encoding",
-          "fileformat",
-          "filetype",
-        },
-        lualine_y = { "progress" },
-        lualine_z = { "location" },
-      },
-    },
-  },
-  {
     "rachartier/tiny-inline-diagnostic.nvim",
     event = "VeryLazy", -- Or `LspAttach`
     priority = 1000, -- needs to be loaded in first
@@ -156,7 +126,7 @@ return {
   {
     "folke/zen-mode.nvim",
     dependencies = {
-      "loctvl842/monokai-pro.nvim",
+      "oskarnurm/koda.nvim",
       "folke/twilight.nvim",
     },
     opts = {

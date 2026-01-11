@@ -1,5 +1,4 @@
 return {
-  -- add monokai pro
   {
     "loctvl842/monokai-pro.nvim",
     config = function()
@@ -25,14 +24,20 @@ return {
       })
     end,
   },
-
-  -- configure LazyVim to use monokai pro
+  { "typicode/bg.nvim", lazy = false },
+  {
+    "oskarnurm/koda.nvim",
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      require("koda").setup({ transparent = true })
+      vim.cmd("colorscheme koda")
+    end,
+  },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "monokai-pro",
+      colorscheme = "koda",
     },
   },
-
-  { "typicode/bg.nvim", lazy = false },
 }
