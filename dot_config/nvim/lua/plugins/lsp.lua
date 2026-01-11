@@ -18,7 +18,7 @@ return {
                 "tombi",
                 "vtsls",
                 "yaml-language-server",
-                -- "rust-analyzer",
+                "rust-analyzer",
             },
         },
     },

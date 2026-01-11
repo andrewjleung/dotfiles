@@ -39,7 +39,10 @@ return {
     },
     {
         "neovim/nvim-lspconfig",
-        opts = { diagnostics = { virtual_text = false } },
+        opts = {
+            diagnostics = { virtual_text = false },
+            inlay_hints = { enabled = false },
+        },
     },
     {
         "kevinhwang91/nvim-ufo",
@@ -85,13 +88,6 @@ return {
         },
     },
     {
-        "neovim/nvim-lspconfig",
-        opts = {
-            inlay_hints = { enabled = false },
-        },
-    },
-
-    {
         "folke/noice.nvim",
         opts = {
             routes = {
@@ -122,7 +118,6 @@ return {
             })
         end,
     },
-
     {
         "folke/zen-mode.nvim",
         dependencies = {
