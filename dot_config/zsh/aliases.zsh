@@ -5,3 +5,12 @@ alias lg="lazygit"
 alias ls="eza -1"
 alias n="nvim ."
 alias res="tdf $RESUMES/artifacts/resume.pdf"
+
+# git
+alias g="git"
+alias gst="git status"
+alias ga="git add"
+alias gcm="git commit -m"
+alias gp="git pull"
+alias gP="git push"
+alias gf="git fetch origin"

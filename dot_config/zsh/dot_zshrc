@@ -7,25 +7,9 @@ _setup_shell() {
     autoload -Uz compinit
     compinit
 
-    # # shellcheck disable=SC2034
-    # plugins=(
-    #     alias-finder
-    #     aliases
-    #     command-not-found
-    #     chezmoi
-    #     fzf
-    #     gh
-    #     git
-    #     golang
-    #     httpie
-    #     mise
-    #     rust
-    #     tailscale
-    #     tmux
-    #     zsh-autosuggestions
-    #     zsh-syntax-highlighting
-    # )
-    #
+    source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+    source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
     eval "$(starship init zsh)"
     eval "$(zoxide init zsh)"
 }
