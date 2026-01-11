@@ -1,16 +1,16 @@
 return {
-  {
-    "stevearc/conform.nvim",
-    opts = {
-      formatters_by_ft = {
-        lua = { "stylua" },
-        sh = { "shfmt", "beautysh" },
-        typst = { "typstyle" },
-        go = { "gofumpt", "goimports" },
-        liquid = { "prettier" },
-        proto = { "buf_ls" },
-        toml = { "tombi" },
-      },
+    {
+        "stevearc/conform.nvim",
+        opts = {
+            formatters_by_ft = {
+                lua = { "stylua" },
+                sh = { "shfmt", "beautysh" },
+                typst = { "typstyle" },
+                go = { "gofumpt", "goimports" },
+                liquid = { "prettier" },
+                proto = { "buf_ls" },
+                toml = { "tombi" },
+            },
+        },
     },
-  },
 }

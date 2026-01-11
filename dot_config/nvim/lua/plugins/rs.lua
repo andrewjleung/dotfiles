@@ -1,6 +1,6 @@
 return {
-  {
-    "alexpasmantier/krust.nvim",
-    ft = "rust",
-  },
+    {
+        "alexpasmantier/krust.nvim",
+        ft = "rust",
+    },
 }

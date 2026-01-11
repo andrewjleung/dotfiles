@@ -14,22 +14,22 @@ vim.o.textwidth = 100
 vim.opt.clipboard = ""
 
 vim.filetype.add({
-  extension = {
-    typ = "typst",
-    keymap = "dts",
-  },
+    extension = {
+        typ = "typst",
+        keymap = "dts",
+    },
 })
 
 vim.lsp.enable("shopify_theme_ls")
 vim.lsp.config("shopify_theme_ls", {
-  root_markers = {
-    ".trmnlp.yml",
-  },
+    root_markers = {
+        ".trmnlp.yml",
+    },
 })
 
 vim.lsp.enable("bashls")
 vim.lsp.config("bashls", {
-  filetypes = { "zsh" },
+    filetypes = { "zsh" },
 })
 
 vim.lsp.enable("buf_ls")
