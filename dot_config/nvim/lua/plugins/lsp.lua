@@ -4,6 +4,7 @@ return {
         opts = {
             ui = { border = "rounded" },
             ensure_installed = {
+                "astro-language-server",
                 "bash-language-server",
                 "biome",
                 "buf",
