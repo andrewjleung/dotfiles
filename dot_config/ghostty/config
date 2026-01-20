@@ -21,7 +21,9 @@ mouse-hide-while-typing = false
 scrollback-limit = 1000000
 shell-integration = zsh
 window-inherit-font-size = false
+window-inherit-working-directory = false
 window-save-state = always
+working-directory = home
 
 # keybinds
 
@@ -33,5 +35,7 @@ keybind = ctrl+j=goto_split:down
 keybind = ctrl+k=goto_split:up
 keybind = ctrl+l=goto_split:right
 
-keybind = super+r=reload_config
+keybind = cmd+alt+arrow_left=previous_tab
+keybind = cmd+alt+arrow_right=next_tab
+
 keybind = cmd+r=prompt_surface_title
