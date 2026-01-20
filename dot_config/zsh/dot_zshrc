@@ -10,6 +10,10 @@ _setup_shell() {
     source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
     source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
+    # support ctrl-a and ctrl-e (beginning/end of line)
+    bindkey "^A" beginning-of-line
+    bindkey "^E" end-of-line
+
     eval "$(starship init zsh)"
     eval "$(zoxide init zsh)"
 }

@@ -1,19 +1,37 @@
+# appearance
+
 background-blur = true
 background-opacity = 0.95
 cursor-opacity = 0.6
 font-size = 14
-link-url = true
-macos-titlebar-style = hidden
-mouse-hide-while-typing = true
-scrollback-limit = 1000000
-shell-integration = zsh
+macos-icon = xray
+macos-titlebar-proxy-icon = hidden
+macos-titlebar-style = tabs
+macos-window-buttons = hidden
 theme = koda
+title = " "
 unfocused-split-opacity = 1
-window-inherit-font-size = false
 window-padding-x = 10
 window-padding-y = 10
+
+# behaviors
+
+link-url = true
+mouse-hide-while-typing = false
+scrollback-limit = 1000000
+shell-integration = zsh
+window-inherit-font-size = false
 window-save-state = always
 
-keybind = super+r=reload_config
+# keybinds
 
-macos-icon = xray
+keybind = ctrl+a>shift+quote=new_split:down
+keybind = ctrl+a>shift+digit_5=new_split:right
+
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+j=goto_split:down
+keybind = ctrl+k=goto_split:up
+keybind = ctrl+l=goto_split:right
+
+keybind = super+r=reload_config
+keybind = cmd+r=prompt_surface_title
