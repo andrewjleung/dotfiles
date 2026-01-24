@@ -8,6 +8,7 @@ return {
                 "bash-language-server",
                 "biome",
                 "buf",
+                "css-lsp",
                 "gopls",
                 "json-lsp",
                 "lua-language-server",

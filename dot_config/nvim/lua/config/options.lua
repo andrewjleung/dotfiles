@@ -32,4 +32,4 @@ vim.lsp.config("bashls", {
     filetypes = { "zsh" },
 })
 
-vim.lsp.enable("buf_ls")
+-- vim.lsp.enable("buf_ls")
