@@ -1,16 +1,15 @@
 alias ca="chezmoi apply"
 alias ccd="chezmoi cd"
-alias foot="tmux split-window -v -l 16 -f"
 alias lg="lazygit"
-alias ls="eza -1"
+alias ls="eza"
 alias n="nvim ."
-alias res="tdf $RESUMES/artifacts/resume.pdf"
 
 # git
 alias g="git"
 alias gP="git push"
 alias ga="git add"
 alias gcm="git commit -m"
+alias gco="git checkout"
 alias gf="git fetch origin"
 alias gp="git pull"
 alias gst="git status"
