@@ -33,3 +33,5 @@ vim.lsp.config("bashls", {
 })
 
 -- vim.lsp.enable("buf_ls")
+
+vim.diagnostic.config({ virtual_text = false, virtual_lines = false })

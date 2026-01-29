@@ -100,13 +100,6 @@ return {
             { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
         },
     },
-
-    {
-        "andrewferrier/wrapping.nvim",
-        config = function()
-            require("wrapping").setup()
-        end,
-    },
     {
         "isak102/ghostty.nvim",
         config = function()
