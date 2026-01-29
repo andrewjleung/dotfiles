@@ -30,10 +30,10 @@ working-directory = home
 keybind = ctrl+a>shift+quote=new_split:down
 keybind = ctrl+a>shift+digit_5=new_split:right
 
-keybind = ctrl+h=goto_split:left
-keybind = ctrl+j=goto_split:down
-keybind = ctrl+k=goto_split:up
-keybind = ctrl+l=goto_split:right
+keybind = performable:ctrl+h=goto_split:left
+keybind = performable:ctrl+j=goto_split:down
+keybind = performable:ctrl+k=goto_split:up
+keybind = performable:ctrl+l=goto_split:right
 
 keybind = cmd+alt+arrow_left=previous_tab
 keybind = cmd+alt+arrow_right=next_tab
