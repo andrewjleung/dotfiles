@@ -39,3 +39,10 @@ keybind = cmd+alt+arrow_left=previous_tab
 keybind = cmd+alt+arrow_right=next_tab
 
 keybind = cmd+r=prompt_surface_title
+
+# quick terminal 
+
+keybind = global:cmd+backquote=toggle_quick_terminal
+quick-terminal-position = center
+quick-terminal-size = 50%,50%
+quick-terminal-animation-duration = 0
