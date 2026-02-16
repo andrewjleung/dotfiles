@@ -14,6 +14,7 @@ return {
                 "lua-language-server",
                 "marksman",
                 "prettier",
+                "pyrefly",
                 "ruff",
                 "rust-analyzer",
                 "shopify-cli",
