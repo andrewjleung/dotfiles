@@ -32,6 +32,8 @@ vim.lsp.config("bashls", {
     filetypes = { "zsh" },
 })
 
+vim.g.lazyvim_python_lsp = "pyrefly"
+
 -- vim.lsp.enable("buf_ls")
 
 vim.diagnostic.config({ virtual_text = false, virtual_lines = false })
