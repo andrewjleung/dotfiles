@@ -3,6 +3,7 @@
 background-blur = true
 background-opacity = 0.95
 cursor-opacity = 0.6
+font-family = Lilex
 font-size = 14
 macos-icon = xray
 macos-titlebar-proxy-icon = hidden
