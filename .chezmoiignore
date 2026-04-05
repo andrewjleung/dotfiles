@@ -1,4 +1,12 @@
-lazyvim.json
 mise.local.toml
 mise.toml
-dot_gitconfig
+.gitconfig
+
+{{ if ne .chezmoi.hostname "andrews-macbook" -}}
+.config/*
+!.config/ghostty
+!.config/nvim
+
+run_onchange_before_install-packages-darwin.sh.tmpl
+.wezterm.lua
+{{ end -}}
