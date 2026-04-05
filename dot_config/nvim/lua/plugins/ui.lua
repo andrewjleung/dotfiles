@@ -1,130 +1,82 @@
-return {
-    {
-        "folke/snacks.nvim",
-        ---@type snacks.Config
-        opts = {
-            explorer = {
-                enabled = false,
-            },
-            indent = {},
-            notifier = {
-                style = "fancy",
-            },
-            styles = {
-                notification = {
-                    wo = {
-                        winblend = 0,
-                    },
-                },
-            },
-        },
-    },
-    {
-        "rachartier/tiny-inline-diagnostic.nvim",
-        event = "VeryLazy", -- Or `LspAttach`
-        priority = 1000, -- needs to be loaded in first
-        opts = {
-            options = {
-                show_source = {
-                    enabled = true,
-                },
-                break_line = {
-                    enabled = true,
-                },
-            },
-        },
-    },
-    {
-        "neovim/nvim-lspconfig",
-        opts = {
-            diagnostics = { virtual_text = false },
-            inlay_hints = { enabled = false },
-        },
-    },
-    {
-        "kevinhwang91/nvim-ufo",
-        dependencies = { "kevinhwang91/promise-async" },
-        config = function()
-            local handler = function(virtText, lnum, endLnum, width, truncate)
-                local newVirtText = {}
-                local suffix = (" 󰁂 %d "):format(endLnum - lnum)
-                local sufWidth = vim.fn.strdisplaywidth(suffix)
-                local targetWidth = width - sufWidth
-                local curWidth = 0
-                for _, chunk in ipairs(virtText) do
-                    local chunkText = chunk[1]
-                    local chunkWidth = vim.fn.strdisplaywidth(chunkText)
-                    if targetWidth > curWidth + chunkWidth then
-                        table.insert(newVirtText, chunk)
-                    else
-                        chunkText = truncate(chunkText, targetWidth - curWidth)
-                        local hlGroup = chunk[2]
-                        table.insert(newVirtText, { chunkText, hlGroup })
-                        chunkWidth = vim.fn.strdisplaywidth(chunkText)
-                        -- str width returned from truncate() may less than 2nd argument, need padding
-                        if curWidth + chunkWidth < targetWidth then
-                            suffix = suffix .. (" "):rep(targetWidth - curWidth - chunkWidth)
-                        end
-                        break
-                    end
-                    curWidth = curWidth + chunkWidth
-                end
-                table.insert(newVirtText, { suffix, "MoreMsg" })
-                return newVirtText
-            end
+local gh = require('utils').gh
 
-            require("ufo").setup({
-                fold_virt_text_handler = handler,
-                provider_selector = function(bufnr, filetype, buftype)
-                    return { "treesitter", "indent" }
-                end,
-            })
-        end,
-        keys = {
-            { "<leader>z", "za", "Toggle fold under cursor (alias 'za')" },
-        },
-    },
-    {
-        "folke/noice.nvim",
-        opts = {
-            routes = {
-                {
-                    filter = {
-                        event = "msg_show",
-                        kind = "search_count",
-                    },
-                    opts = { skip = true },
-                },
-            },
-            presets = {
-                lsp_doc_border = true,
-            },
-            lsp = {
-                signature = {
-                    enabled = false,
-                },
-            },
-        },
-    },
-
-    {
-        "Bekaboo/deadcolumn.nvim",
-        config = function()
-            require("deadcolumn").setup({
-                scope = "buffer",
-            })
-        end,
-    },
-    {
-        "folke/zen-mode.nvim",
-        dependencies = {
-            "oskarnurm/koda.nvim",
-            "folke/twilight.nvim",
-        },
-        opts = {
-            twilight = {
-                enabled = false,
-            },
-        },
-    },
+vim.pack.add {
+  gh 'nvim-mini/mini.statusline',
+  gh 'lukas-reineke/indent-blankline.nvim',
 }
+
+MiniStatusline = require 'mini.statusline'
+-- vim.g.macro_recording = ''
+
+MiniStatusline.setup {
+  content = {
+    active = function()
+      local mode, mode_hl = MiniStatusline.section_mode { trunc_width = 120 }
+      local git = MiniStatusline.section_git { trunc_width = 40 }
+      local diff = MiniStatusline.section_diff { trunc_width = 75 }
+      local diagnostics = MiniStatusline.section_diagnostics { trunc_width = 75 }
+      local lsp = MiniStatusline.section_lsp { trunc_width = 75 }
+      local filename = MiniStatusline.section_filename { trunc_width = 140 }
+      -- local macro = vim.g.macro_recording
+      local fileinfo = MiniStatusline.section_fileinfo { trunc_width = 120 }
+      local location = MiniStatusline.section_location { trunc_width = 75 }
+      local search = MiniStatusline.section_searchcount { trunc_width = 75 }
+
+      return MiniStatusline.combine_groups {
+        { hl = mode_hl, strings = { mode } },
+        { hl = 'MiniStatuslineDevinfo', strings = { git, diff, diagnostics, lsp } },
+        '%<', -- Mark general truncate point
+        { hl = 'MiniStatuslineFilename', strings = { filename } },
+        '%=', -- End left alignment
+        -- { hl = 'Macro', strings = { macro } },
+        { hl = 'MiniStatuslineFileinfo', strings = { fileinfo } },
+        { hl = mode_hl, strings = { search, location } },
+      }
+    end,
+  },
+}
+
+-- vim.api.nvim_create_autocmd('RecordingEnter', {
+--   pattern = '*',
+--   callback = function()
+--     vim.g.macro_recording = 'Recording @' .. vim.fn.reg_recording()
+--     vim.cmd 'redrawstatus'
+--   end,
+-- })
+--
+-- -- Autocmd to track the end of macro recording
+-- vim.api.nvim_create_autocmd('RecordingLeave', {
+--   pattern = '*',
+--   callback = function()
+--     vim.g.macro_recording = ''
+--     vim.cmd 'redrawstatus'
+--   end,
+-- })
+
+require('ibl').setup()
+
+-- Folds
+
+vim.o.foldenable = true
+vim.o.foldlevel = 99
+vim.o.foldmethod = 'expr'
+vim.o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.o.foldtext = ''
+vim.opt.foldcolumn = '0'
+vim.opt.fillchars:append { fold = ' ' }
+
+-- Default to treesitter folding
+vim.o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+
+-- Prefer LSP folding if client supports it
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client and client:supports_method 'textDocument/foldingRange' then
+      local win = vim.api.nvim_get_current_win()
+      vim.wo[win][0].foldexpr = 'v:lua.vim.lsp.foldexpr()'
+    end
+  end,
+})
+
+vim.api.nvim_create_autocmd('LspDetach', { command = 'setl foldexpr<' })

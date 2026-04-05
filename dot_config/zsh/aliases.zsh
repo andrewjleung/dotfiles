@@ -3,6 +3,7 @@ alias ccd="chezmoi cd"
 alias lg="lazygit"
 alias ls="eza"
 alias n="nvim ."
+alias nvim-kickstart='NVIM_APPNAME="nvim-kickstart" nvim'
 
 # git
 alias g="git"
