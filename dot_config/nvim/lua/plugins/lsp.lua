@@ -5,6 +5,7 @@ local gh = require('utils').gh
 --  See `:help lsp-config` for information about keys and how to configure
 ---@type table<string, vim.lsp.Config>
 local servers = {
+  biome = {},
   gopls = {},
   rust_analyzer = {},
   stylua = {},
