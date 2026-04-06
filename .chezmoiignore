@@ -7,6 +7,6 @@ mise.toml
 !.config/ghostty
 !.config/nvim
 
-run_onchange_before_install-packages-darwin.sh.tmpl
+run_onchange_before_install-packages-darwin.sh
 .wezterm.lua
 {{ end -}}
