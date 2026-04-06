@@ -1,4 +1,4 @@
-{{- if eq .chezmoi.os "darwin" and eq .chezmoi.hostname "andrews-macbook" -}}
+{{- if (and (eq .chezmoi.os "darwin") (eq .chezmoi.hostname "andrews-macbook")) -}}
 #!/bin/bash
 
 brew bundle --file=/dev/stdin <<EOF
