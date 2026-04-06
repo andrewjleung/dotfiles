@@ -8,3 +8,5 @@ require 'plugins.navigation'
 require 'plugins.treesitter'
 -- require 'plugins.debug'
 require 'plugins.ui'
+
+require 'plugins.rust'
