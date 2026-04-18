@@ -41,6 +41,8 @@ keybind = cmd+alt+arrow_right=next_tab
 
 keybind = cmd+r=prompt_surface_title
 
+keybind = ctrl+a>k=text:zmx-select\r
+
 # quick terminal 
 
 keybind = global:cmd+backquote=toggle_quick_terminal
