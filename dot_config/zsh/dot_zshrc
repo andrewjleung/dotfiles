@@ -4,6 +4,8 @@ _setup_shell() {
     # mise must come first to ensure tools and env are set
     eval "$("$HOME"/.local/bin/mise activate zsh)"
     eval "$(/opt/homebrew/bin/brew shellenv)"
+
+    # completions
     autoload -Uz compinit
     compinit
 
